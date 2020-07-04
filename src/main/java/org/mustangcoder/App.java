@@ -3,6 +3,8 @@ package org.mustangcoder;
 import org.mustangcoder.common.Context;
 import org.mustangcoder.processor.ProcessorFactory;
 
+import java.io.BufferedReader;
+import java.io.FileReader;
 import java.util.Locale;
 
 /**
@@ -15,8 +17,25 @@ public class App {
     }
 
     private void start() {
+        loadSlogan();
         Context.getInstance().init();
         String way = Context.getInstance().getProp("server.communication.way", "").toLowerCase(Locale.ENGLISH);
         ProcessorFactory.getProcessor(way).process();
+    }
+
+    private void loadSlogan() {
+        String dir = App.class.getResource("/").getPath();
+        try {
+            FileReader fileReader = new FileReader(dir + "slogan.txt");
+            BufferedReader bufferedReader = new BufferedReader(fileReader);
+            String line = null;
+            StringBuilder stringBuilder = new StringBuilder();
+            while ((line = bufferedReader.readLine()) != null) {
+                stringBuilder.append(line).append(System.lineSeparator());
+            }
+            System.out.println(stringBuilder);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }
