@@ -2,8 +2,9 @@ package org.mustangcoder.processor;
 
 import org.mustangcoder.common.Context;
 import org.mustangcoder.web.Request;
-import org.mustangcoder.web.Response;
 import org.mustangcoder.web.Servlet;
+import org.mustangcoder.web.response.BIOResponse;
+import org.mustangcoder.web.response.Response;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -31,7 +32,7 @@ public class BIOProcessor implements Processor {
                 InputStream inputStream = client.getInputStream();
                 OutputStream outputStream = client.getOutputStream();
                 Request request = new Request(inputStream);
-                Response response = new Response(outputStream);
+                Response response = new BIOResponse(outputStream);
                 String url = request.getUrl();
 
                 if (url == null || "".equals(url)) {

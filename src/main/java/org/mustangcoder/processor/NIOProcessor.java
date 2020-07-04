@@ -2,8 +2,9 @@ package org.mustangcoder.processor;
 
 import org.mustangcoder.common.Context;
 import org.mustangcoder.web.Request;
-import org.mustangcoder.web.Response;
 import org.mustangcoder.web.Servlet;
+import org.mustangcoder.web.response.NIOResponse;
+import org.mustangcoder.web.response.Response;
 
 import java.io.IOException;
 import java.net.InetSocketAddress;
@@ -56,7 +57,7 @@ public class NIOProcessor implements Processor {
                         selectionKey.interestOps(SelectionKey.OP_WRITE);
                     } else if (selectionKey.isWritable()) {
                         System.out.println("nio: OP_WRITE");
-                        Response response = new Response(selectionKey);
+                        Response response = new NIOResponse(selectionKey);
                         responseList.add(response);
                         selectionKey.interestOps(SelectionKey.OP_READ);
                     }

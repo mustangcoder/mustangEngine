@@ -1,5 +1,7 @@
 package org.mustangcoder.web;
 
+import org.mustangcoder.web.response.Response;
+
 import java.io.IOException;
 
 public class HomeServlet extends Servlet {

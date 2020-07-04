@@ -8,9 +8,9 @@ public class ProcessorFactory {
         } else if ("nio".equals(way)) {
             return new NIOProcessor();
         } else if ("aio".equals(way)) {
-            return new BIOProcessor();
+            return new AIOProcessor();
         } else if ("netty".equals(way)) {
-            return new BIOProcessor();
+            return new NettyProcessor();
         } else if ("mina".equals(way)) {
             return new BIOProcessor();
         } else {

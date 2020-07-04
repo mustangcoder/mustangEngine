@@ -1,5 +1,7 @@
 package org.mustangcoder.web;
 
+import org.mustangcoder.web.response.Response;
+
 public abstract class Servlet {
 
     public void service(Request request, Response response) {
