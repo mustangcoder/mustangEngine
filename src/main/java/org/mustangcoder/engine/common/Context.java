@@ -1,7 +1,7 @@
-package org.mustangcoder.common;
+package org.mustangcoder.engine.common;
 
-import org.mustangcoder.App;
-import org.mustangcoder.web.Servlet;
+import org.mustangcoder.engine.App;
+import org.mustangcoder.engine.web.Servlet;
 
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -42,7 +42,7 @@ public class Context {
                     System.out.println("Mustang Engine register servlet:" + url + " " + className);
                 }
             }
-            Servlet servlet = (Servlet) Class.forName("org.mustangcoder.web.HomeServlet").newInstance();
+            Servlet servlet = (Servlet) Class.forName("org.mustangcoder.engine.web.HomeServlet").newInstance();
             servletMap.put("/", servlet);
 
         } catch (IOException | ClassNotFoundException | IllegalAccessException | InstantiationException e) {

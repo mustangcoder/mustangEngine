@@ -1,4 +1,4 @@
-package org.mustangcoder.processor;
+package org.mustangcoder.engine.processor;
 
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.*;
@@ -8,10 +8,10 @@ import io.netty.channel.socket.nio.NioServerSocketChannel;
 import io.netty.handler.codec.http.HttpRequest;
 import io.netty.handler.codec.http.HttpRequestDecoder;
 import io.netty.handler.codec.http.HttpResponseEncoder;
-import org.mustangcoder.common.Context;
-import org.mustangcoder.web.Request;
-import org.mustangcoder.web.response.NettyResponse;
-import org.mustangcoder.web.response.Response;
+import org.mustangcoder.engine.common.Context;
+import org.mustangcoder.engine.web.Request;
+import org.mustangcoder.engine.web.response.NettyResponse;
+import org.mustangcoder.engine.web.response.Response;
 
 public class NettyProcessor implements Processor {
     @Override

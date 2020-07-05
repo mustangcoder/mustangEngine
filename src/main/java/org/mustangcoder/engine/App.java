@@ -1,7 +1,7 @@
-package org.mustangcoder;
+package org.mustangcoder.engine;
 
-import org.mustangcoder.common.Context;
-import org.mustangcoder.processor.ProcessorFactory;
+import org.mustangcoder.engine.common.Context;
+import org.mustangcoder.engine.processor.ProcessorFactory;
 
 import java.io.BufferedReader;
 import java.io.FileReader;

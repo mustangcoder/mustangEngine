@@ -1,6 +1,6 @@
-package org.mustangcoder.web;
+package org.mustangcoder.engine.web;
 
-import org.mustangcoder.web.response.Response;
+import org.mustangcoder.engine.web.response.Response;
 
 public abstract class Servlet {
 
